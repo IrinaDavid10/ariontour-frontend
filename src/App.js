@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import CustomerByLastNamePage from './pages/CustomerByLastNamePage';
+import CustomerByFirstNamePage from './pages/CustomerByFirstNamePage';
 import CustomerShowAllPage from './pages/CustomerShowAllPage';
 import NavBar from './components/NavBar';
 
@@ -12,7 +12,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<CustomerShowAllPage/>}/>
-          <Route path="/customer" element={<CustomerByLastNamePage/>}/>
+          <Route path="/customer" element={<CustomerByFirstNamePage/>}/>
         </Routes>
       </Router>
     </div>
