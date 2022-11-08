@@ -12,8 +12,7 @@ function CustomerList(props) {
                     <th className={styles.customersth}>Account No.</th>
                     <th className={styles.customersth}>First Name</th>
                     <th className={styles.customersth}>Last Name</th>
-                    <th className={styles.customersth}>Country</th>
-                    <th className={styles.customersth}>Username</th>
+        
                     <th className={styles.customersth}>Delete</th>
                 </tr>
             </thead>

@@ -1,14 +1,14 @@
 import React, {useState, useEffect, useRef} from "react";
 import axios from 'axios'
 import CustomerList from "../components/CustomerList";
-
+import CustomerAPI from "../APIs/CustomerAPI";
 
 function CustomerShowAllPage(){
     
     const[customersList, setCustomersList] = useState([]);
 
     useEffect(() =>{
-        axios.get("http://localhost:8080/customers")
+        CustomerAPI.getCustomers()
         .then(response => {
             setCustomersList(response.data.customers);
         })

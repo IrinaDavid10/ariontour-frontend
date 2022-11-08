@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Customer.module.css"
-import axios from "axios";
+import CustomerAPI from "../APIs/CustomerAPI";
 
 function Customer(props) {
 
     function deleteUser(customer){
-        axios.delete('http://localhost:8080/customers/deletecustomer/'+ customer.id)
+        CustomerAPI.removeCustomer(customer)
         .then(res => {
             console.log(res);
             console.log(res.data);
@@ -17,8 +17,7 @@ function Customer(props) {
             <td className={styles.customerstd}>{ props.customer.id }</td>
             <td className={styles.customerstd}>{ props.customer.firstName }</td>
             <td className={styles.customerstd}>{ props.customer.lastName }</td>
-            <td className={styles.customerstd}>{ props.customer.country }</td>
-            <td className={styles.customerstd}>{ props.customer.username }</td>
+           
             <td className={styles.customerstd} ><button onClick={ () => deleteUser(props.customer) }>X</button></td>
         </tr>
       
