@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios"
 import CustomerSearchByFirstName from "../components/CustomerSearchByFirstName";
 import CustomerList from "../components/CustomerList";
+import CustomerAPI from "../APIs/CustomerAPI";
 
 
 function CustomerByFirstNamePage(){
@@ -10,7 +11,7 @@ function CustomerByFirstNamePage(){
     const [filteredCustomers, setFilteredCustomers] = useState([]);
     
     useEffect(() =>{
-        axios.get("http://localhost:8080/customers")
+       CustomerAPI.getCustomers()
         .then(response => {
             setCustomersList(response.data.customers);
         })

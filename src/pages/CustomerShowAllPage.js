@@ -1,5 +1,4 @@
-import React, {useState, useEffect, useRef} from "react";
-import axios from 'axios'
+import React, {useState, useEffect} from "react";
 import CustomerList from "../components/CustomerList";
 import CustomerAPI from "../APIs/CustomerAPI";
 
@@ -12,8 +11,8 @@ function CustomerShowAllPage(){
         .then(response => {
             setCustomersList(response.data.customers);
         })
-        .catch(err => console.error(err));
-    });
+        .catch(err => console.error(err))
+    },[customersList]);
     
     return (
         <CustomerList customersList={customersList}/>

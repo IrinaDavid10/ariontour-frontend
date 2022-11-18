@@ -14,6 +14,16 @@ function NavBar(){
             id: 2,
             path: "/customer",
             text: "Customer Refine"
+        },
+        {
+            id: 3,
+            path: "/login",
+            text: "Log in"
+        },
+        {
+            id: 4,
+            path: "/register",
+            text: "Customer registration"
         }
     ]
 

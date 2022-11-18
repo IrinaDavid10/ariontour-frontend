@@ -3,6 +3,8 @@ import './App.css';
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import CustomerByFirstNamePage from './pages/CustomerByFirstNamePage';
 import CustomerShowAllPage from './pages/CustomerShowAllPage';
+import UserRegistrationPage from './pages/UserRegistrationPage';
+import LoginPage from './pages/LoginPage';
 import NavBar from './components/NavBar';
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<CustomerShowAllPage/>}/>
           <Route path="/customer" element={<CustomerByFirstNamePage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
+          <Route path="/register" element={<UserRegistrationPage/>}/>
         </Routes>
       </Router>
     </div>
