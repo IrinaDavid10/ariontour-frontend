@@ -1,30 +1,44 @@
 import React from "react";
 import Customer from "./Customer";
+import Table from 'react-bootstrap/Table';
 import styles from "./CustomerList.module.css"
+import CustomerAPI from "../APIs/CustomerAPI";
+
+
 
 function CustomerList(props) {
 
+    function deleteUser(customer){
+        CustomerAPI.removeCustomer(customer)
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+            console.log(customer.id);
+  });
+}
     return (
-        <div className={styles.customerList}>
-        <table className={styles.customers}>
-            <thead>
-                <tr>
-                    <th className={styles.customersth}>Account No.</th>
-                    <th className={styles.customersth}>First Name</th>
-                    <th className={styles.customersth}>Last Name</th>
+    
+      <Table responsive="xxl" striped bordered hover size="xxl">
+      <thead>
+          <tr>
+              <th>Account No.</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Delete</th>
+          </tr>
+      </thead>
+
+
+      <tbody>
+          {props.customersList.map(customer => (
+          <Customer key={ customer.id } customer={customer}/> 
+          ))}
+      </tbody>
+  </Table>
+       
         
-                    <th className={styles.customersth}>Delete</th>
-                </tr>
-            </thead>
-
-
-            <tbody>
-                {props.customersList.map(customer => (
-                <Customer key={ customer.id } customer={customer}/>        
-                ))}
-            </tbody>
-        </table>
-        </div>
+        
+       
     )
     
 }

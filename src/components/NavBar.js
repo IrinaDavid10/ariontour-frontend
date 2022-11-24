@@ -1,14 +1,18 @@
 import React from "react"
-import { NavLink } from "react-router-dom"
-import styles from './NavBar.module.css'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Image from "react-bootstrap/Image";
+import Button from 'react-bootstrap/Button';
 
 function NavBar(){
 
     const links = [
+      
         {
             id: 1,
             path: "/",
-            text: "Overview"
+            text: "AriOnTour"
         },
         {
             id: 2,
@@ -17,30 +21,51 @@ function NavBar(){
         },
         {
             id: 3,
-            path: "/login",
-            text: "Log in"
+            path: "/register",
+            text: "Customer registration"
         },
         {
             id: 4,
-            path: "/register",
-            text: "Customer registration"
+            path: "/customers",
+            text: "Customers overview"
         }
     ]
 
     return (
-        <nav className={styles.navBar}>
-            <ul>
-                {links.map(link => {
-                    return (
-                        <li key={link.id}>
-                            {<NavLink to={link.path}>
-                            {link.text}
-                            </NavLink>}
-                        </li>
-                    )
-                })}
-            </ul>
-        </nav>
+        <div>
+            <Navbar bg="light" expand="lg">
+                <Container>
+                    <Navbar.Brand href={links[0].path}><img
+                        src="/images/AriLogo.png"
+                        width="100"
+                        height="100"
+                        className="d-inline-block align-top"
+                        alt="React Bootstrap logo"/>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav>
+                            {links.slice(1).map(link => {
+                                return (
+                            
+                                <Nav.Link className="me-5"  key={link.id} href={link.path}>
+                                {link.text}
+                                </Nav.Link>
+                     
+                            )
+                            })}
+                               
+                        </Nav>
+                    </Navbar.Collapse>
+                    <Navbar.Collapse className="justify-content-end">
+                            <Button variant="dark"  href="/login">Login</Button>          
+                        </Navbar.Collapse> 
+                    
+       
+        
+                </Container>
+            </Navbar>
+        </div>
     )
 }
 
