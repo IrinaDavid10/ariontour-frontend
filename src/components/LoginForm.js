@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./InputForm.module.css"
 import UserAPI from "../APIs/UserAPI.js"
 import { useState } from "react";
+
 
 function LoginForm(props) {
 
@@ -32,35 +32,37 @@ function LoginForm(props) {
         })
     }
     return (
-        <Card style={{ width: '18rem' }}>
-        <form className="form-container"
-            onSubmit={handleSubmit}>
-            <div class="form-outline mb-4">
-            <input
-                type="email"
-                id="form2Example1"
-                class="form-control" 
-                onChange={handleUsernameChange}
-                required
-                minLength="2"
-                maxLength="20"
-            />
-            <label class="form-label" for="form2Example1">Email address</label>
+        <form className="bg-secondary p-2 bg-opacity-10" onSubmit={handleSubmit}>
+  
+          <div className="form-outline mb-4">
+            <label className="form-label" >Username</label>
+            <input type="text" id="form2Example1" className="form-control" onChange={ handleUsernameChange} />
+          </div>
+
+          <div className="form-outline mb-4">
+            <label className="form-label" >Password</label>
+            <input type="password" id="form2Example2" className="form-control" onChange={handlePasswordChange} />
+          </div>
+
+          <div className="row mb-4">
+            <div className="col d-flex justify-content-center">
+              <div className="form-check">
+                <input className="form-check-input" type="checkbox" value="" id="form2Example31" />
+                <label className="form-check-label"> Remember me </label>
+              </div>
             </div>
-            <div class="form-outline mb-4">
-                        <input
-                type="password"
-                id="form2Example2"
-                class="form-control"
-                onChange={handlePasswordChange}
-                required
-                minLength="2"
-            />
-              <label class="form-label" for="form2Example2">Password</label>
+
+            <div className="col">
+              <a href="/forgotpassword">Forgot password?</a>
             </div>
+          </div>
+
+          <button className="btn btn-primary input-submit btn-block mb-4">Sign in</button>
+
+          <div className="text-center">
+            <p>Not a member? <a href="/register">Register now</a></p>
+          </div>
         </form>
-        </Card>
     )
 }
-
 export default LoginForm;

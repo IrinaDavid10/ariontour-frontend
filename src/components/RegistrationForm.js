@@ -1,4 +1,3 @@
-import styles from "./InputForm.module.css"
 import UserAPI from "../APIs/UserAPI.js"
 import React, { useState, useEffect } from "react";
 import CountryAPI from "../APIs/CountryAPI.js";
@@ -86,65 +85,45 @@ function RegistrationForm() {
             console.log(error)});
     }
     return (
-        <div className={styles.inputForm}>
-        <form className="form-container"
-            onSubmit={handleSubmit}>
-            <input
-                type="text"
-                className="input-text"
-                placeholder="Username"
-                onChange={handleUsernameChange}
-                required
-                minLength="2"
-                maxLength="20"
-            />
-             <input
-                type="text"
-                className="input-text"
-                placeholder="First name"
-                onChange={handleFirstNameChange}
-                required
-                minLength="2"
-                maxLength="50"
-            />
-              <input
-                type="text"
-                className="input-text"
-                placeholder="Last name"
-                onChange={handleLastNameChange} 
-                required
-                minLength="2"
-                maxLength="50"
-            />
-                <label>Country:</label>
-                    <select id="country" name="country" onChange={handleCountryChange}>
+      <form className="bg-secondary p-2 bg-opacity-10" onSubmit={handleSubmit}>
+  
+        <div className="form-outline mb-4">
+          <label className="form-label" >Username</label>
+          <input type="text" id="form2Example1" className="form-control" onChange={ handleUsernameChange} />
+        </div>
+
+        <div className="form-outline mb-4">
+          <label className="form-label" >First name</label>
+          <input type="text" id="form2Example1" className="form-control" onChange={ handleFirstNameChange} />
+        </div>
+
+        <div className="form-outline mb-4">
+          <label className="form-label" >Last name</label>
+          <input type="text" id="form2Example1" className="form-control" onChange={ handleLastNameChange} />
+        </div>
+
+        <div className="form-outline mb-4">
+          <label className="form-label" >Country</label>
+          <select id="country" name="country" onChange={handleCountryChange}>
                     {countriesList.map(country => (
                     <CountryPicker key={ country.id } country={country}/>        
-                ))}
-                    </select>
-
-                 
-            
-                <input
-                type="password"
-                className="input-text"
-                placeholder="Password"
-                onChange={handlePasswordChange}
-                required
-                minLength="2"
-            />
-            <input
-                type="password"
-                className="input-text"
-                placeholder="Re-type Password"
-                onChange={handleReTypeChange}
-                required
-                minLength="2"
-            />
-            <p>{matchPasswordCheck}</p>
-            <button className="input-submit">Submit</button>
-        </form>
+                  ))}
+            </select>
         </div>
+
+        <div className="form-outline mb-4">
+          <label className="form-label" >Password</label>
+          <input type="password" id="form2Example2" className="form-control" onChange={handlePasswordChange} />
+        </div>
+
+        <div className="form-outline mb-4">
+          <label className="form-label" >Re-type password</label>
+          <input type="password" id="form2Example2" className="form-control" onChange={handleReTypeChange} />
+        </div>
+
+        <button className="btn btn-primary input-submit btn-block mb-4">Submit</button>
+     </form>
+
     )
 }
 
