@@ -2,7 +2,6 @@ import React from "react"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Image from "react-bootstrap/Image";
 import Button from 'react-bootstrap/Button';
 
 function NavBar(){
@@ -28,6 +27,11 @@ function NavBar(){
             id: 4,
             path: "/customers",
             text: "Customers overview"
+        },
+        {
+            id: 5,
+            path: "/events",
+            text: "Events"
         }
     ]
 
@@ -47,26 +51,19 @@ function NavBar(){
                         <Nav>
                             {links.slice(1).map(link => {
                                 return (
-                            
                                 <Nav.Link className="me-5"  key={link.id} href={link.path}>
                                 {link.text}
                                 </Nav.Link>
-                     
                             )
                             })}
-                               
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Collapse className="justify-content-end">
-                            <Button variant="dark"  href="/login">Login</Button>          
+                            <Button variant="outline-dark"  href="/login">Login</Button>          
                         </Navbar.Collapse> 
-                    
-       
-        
                 </Container>
             </Navbar>
         </div>
     )
 }
-
 export default NavBar;

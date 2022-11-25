@@ -7,6 +7,8 @@ import UserRegistrationPage from './pages/UserRegistrationPage';
 import LoginPage from './pages/LoginPage';
 import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AllEventsPage from './pages/AllEventsPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Route path="/customers" element={<CustomerShowAllPage/>}/>
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/register" element={<UserRegistrationPage/>}/>
+          <Route path="/events" element={<AllEventsPage/>}/>
+          <Route path="/forgotpassword" element={<ForgotPasswordPage/>}/>
         </Routes>
       </Router>
     </div>

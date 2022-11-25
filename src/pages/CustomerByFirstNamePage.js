@@ -9,15 +9,20 @@ function CustomerByFirstNamePage(){
     const [customersList, setCustomersList] = useState([]);    
     const [search, setSearch] = useState('');
     const [filteredCustomers, setFilteredCustomers] = useState([]);
+    const fetchCustomers= async () => {  
+        CustomerAPI.getCustomers()
+                    .then(response =>{
+                        setCustomersList(response.data.customers);
+                    })
+                    .catch(err => console.error(err))
+        
+    }
     
-    useEffect(() =>{
-       CustomerAPI.getCustomers()
-        .then(response => {
-            setCustomersList(response.data.customers);
-        })
-        .catch(err => console.error(err));
-    }, []);
-    
+    useEffect(()  =>{
+        fetchCustomers();
+    },[]);
+
+
     useEffect(() => {
         setFilteredCustomers(
             customersList.filter( customer => {

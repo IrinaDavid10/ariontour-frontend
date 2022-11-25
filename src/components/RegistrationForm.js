@@ -2,7 +2,7 @@ import styles from "./InputForm.module.css"
 import UserAPI from "../APIs/UserAPI.js"
 import React, { useState, useEffect } from "react";
 import CountryAPI from "../APIs/CountryAPI.js";
-import Country from "./Country";
+import CountryPicker from "./CountryPicker";
 
 function RegistrationForm() {
 
@@ -119,7 +119,7 @@ function RegistrationForm() {
                 <label>Country:</label>
                     <select id="country" name="country" onChange={handleCountryChange}>
                     {countriesList.map(country => (
-                    <Country key={ country.id } country={country}/>        
+                    <CountryPicker key={ country.id } country={country}/>        
                 ))}
                     </select>
 

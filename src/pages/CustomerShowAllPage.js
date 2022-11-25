@@ -9,12 +9,16 @@ function CustomerShowAllPage(){
     
     const[customersList, setCustomersList] = useState([]);
 
+    const fetchCustomers= async () => {  
+        await CustomerAPI.getCustomers()
+                    .then(response =>{
+                        setCustomersList(response.data.customers);
+                    })
+                    .catch(err => console.error(err))
+        
+    }
     useEffect(() =>{
-        CustomerAPI.getCustomers()
-        .then(response => {
-            setCustomersList(response.data.customers);
-        })
-        .catch(err => console.error(err))
+        fetchCustomers();
     },[customersList]);
     
     return (

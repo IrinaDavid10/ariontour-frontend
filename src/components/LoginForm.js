@@ -32,27 +32,34 @@ function LoginForm(props) {
         })
     }
     return (
+        <Card style={{ width: '18rem' }}>
         <form className="form-container"
             onSubmit={handleSubmit}>
+            <div class="form-outline mb-4">
             <input
-                type="text"
-                className="input-text"
-                placeholder="Username"
+                type="email"
+                id="form2Example1"
+                class="form-control" 
                 onChange={handleUsernameChange}
                 required
                 minLength="2"
                 maxLength="20"
             />
+            <label class="form-label" for="form2Example1">Email address</label>
+            </div>
+            <div class="form-outline mb-4">
                         <input
                 type="password"
-                className="input-text"
-                placeholder="Password"
+                id="form2Example2"
+                class="form-control"
                 onChange={handlePasswordChange}
                 required
                 minLength="2"
             />
-            <button className="input-submit">Submit</button>
+              <label class="form-label" for="form2Example2">Password</label>
+            </div>
         </form>
+        </Card>
     )
 }
 
