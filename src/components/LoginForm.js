@@ -32,19 +32,21 @@ function LoginForm(props) {
         })
     }
     return (
-        <form className="bg-secondary p-2 bg-opacity-10" onSubmit={handleSubmit}>
-  
-          <div className="form-outline mb-4">
+      <div>
+        <h1>Log in</h1>
+        <form className="bg-secondary p-2 bg-opacity-10 mt-5" onSubmit={handleSubmit}>
+       
+          <div className="form-outline mb-5 mt-5">
             <label className="form-label" >Username</label>
             <input type="text" id="form2Example1" className="form-control" onChange={ handleUsernameChange} />
           </div>
 
-          <div className="form-outline mb-4">
+          <div className="form-outline mb-5">
             <label className="form-label" >Password</label>
             <input type="password" id="form2Example2" className="form-control" onChange={handlePasswordChange} />
           </div>
 
-          <div className="row mb-4">
+          <div className="row mb-5">
             <div className="col d-flex justify-content-center">
               <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="form2Example31" />
@@ -63,6 +65,8 @@ function LoginForm(props) {
             <p>Not a member? <a href="/register">Register now</a></p>
           </div>
         </form>
+
+      </div>
     )
 }
 export default LoginForm;

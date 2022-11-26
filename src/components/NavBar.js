@@ -13,26 +13,55 @@ function NavBar(){
             path: "/",
             text: "AriOnTour"
         },
+        /*
         {
             id: 2,
             path: "/customer",
             text: "Customer Refine"
         },
+        */
+       /*
         {
             id: 3,
             path: "/register",
             text: "Customer registration"
         },
+        */
+       /*
         {
             id: 4,
             path: "/customers",
             text: "Customers overview"
         },
+        */
         {
             id: 5,
+            path: "/about",
+            text: "About"
+         
+        },
+        {
+            id: 6,
             path: "/events",
             text: "Events"
+        },
+        {
+            id: 7,
+            path: "/contact",
+            text: "Contact"
+        },
+        {
+            id: 8,
+            path: "/adminpanel",
+            text: "Admin panel"
+        },
+        /*
+        {
+            id: 8,
+            path: "/forgotpassword",
+            text: "Forgot password"
         }
+        */
     ]
 
     return (
@@ -59,8 +88,8 @@ function NavBar(){
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Collapse className="justify-content-end">
-                            <Button variant="outline-dark"  href="/login">Login</Button>          
-                        </Navbar.Collapse> 
+                    <Button variant="outline-dark"  href="/login">Login</Button>          
+                    </Navbar.Collapse> 
                 </Container>
             </Navbar>
         </div>

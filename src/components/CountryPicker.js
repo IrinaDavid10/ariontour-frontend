@@ -1,8 +1,11 @@
 import React from "react";
 
-function Country(props) {
+function CountryPicker(props) {
     return (
-    <option value={props.country.country_code}>{props.country.country_code}</option>
+        
+       
+        <option value={props.country.country_code}>{props.country.country_name}</option>
+  
     )
 }
-export default Country;
+export default CountryPicker;

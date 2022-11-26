@@ -16,7 +16,7 @@ function EventCard(props){
                         {props.event.dateTime.split('T')[1]}
                        
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Button variant="secondary">Check out now</Button>
             </Card.Body>
         </Card>
     )
