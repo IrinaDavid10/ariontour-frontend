@@ -4,19 +4,25 @@ import { Button } from 'react-bootstrap';
 import React, { useState } from 'react';
 import {useEffect} from 'react';
 import useBreakpoint from '../Hooks/useBreakpoint';
-function AdminPanelMenu(){
-    const { collapseSidebar,collapsed } = useProSidebar();
+import AllEventsPage from '../pages/AllEventsPage';
+import {  GiMicrophone} from 'react-icons/gi';
+import { CiBeerMugFull } from 'react-icons/ci';
 
+function AdminPanelMenu(props){
+
+    const { collapseSidebar,collapsed } = useProSidebar();
     const breakpoint = useBreakpoint();
     const sideBurgerButton = <Button onClick={() => collapseSidebar()}>|||</Button>;
-   // Xs:640px
+    const breakPointLimit = 768;   
+    
+    // Xs:640px
     //Sm:641px - 768px
    // Md: 769px - 1024px
   //  Lg: 1025px
    const [defaultCollapsed, setDefaultCollapsed] = useState();
 
    const [sideBurgerMenuButton, setSideBurgerMenuButton] =useState(() => {
-    if (breakpoint<768) {
+    if (breakpoint<breakPointLimit) {
         setDefaultCollapsed(true);
     }
     else
@@ -35,16 +41,16 @@ function AdminPanelMenu(){
                 setSideBurgerMenuButton(""); 
             }
       }, [breakpoint]);
-   
+
     return (
 
-      <div style={{ display: 'flex', height: '100%' }}>
+      <div style={{ display: 'flex' }}>
       {sideBurgerMenuButton}
-        <Sidebar defaultCollapsed={defaultCollapsed}>
-          <Menu>
+        <Sidebar  width={200} defaultCollapsed={defaultCollapsed}>
+          <Menu >
             <MenuItem> Documentation</MenuItem>
-            <MenuItem> Calendar</MenuItem>
-            <MenuItem> E-commerce</MenuItem>
+            <MenuItem icon={<CiBeerMugFull/>}> Calendar</MenuItem>
+            <MenuItem icon={<GiMicrophone/>} onClick={() => props.setContent(<AllEventsPage/>)}> Events</MenuItem>
           </Menu>
         </Sidebar>
         <main>
