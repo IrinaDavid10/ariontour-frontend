@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios"
 import CustomerSearchByFirstName from "../components/CustomerSearchByFirstName";
-import CustomerList from "../components/CustomerList";
 import CustomerAPI from "../APIs/CustomerAPI";
 
 
@@ -9,6 +7,7 @@ function CustomerByFirstNamePage(){
     const [customersList, setCustomersList] = useState([]);    
     const [search, setSearch] = useState('');
     const [filteredCustomers, setFilteredCustomers] = useState([]);
+    
     const fetchCustomers= async () => {  
         CustomerAPI.getCustomers()
                     .then(response =>{

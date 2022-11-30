@@ -2,6 +2,7 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+
 function EventCard(props){
     return(
         <Card style={{ width: '18rem' }}>

@@ -3,10 +3,11 @@ import { Sidebar, Menu, MenuItem, useProSidebar } from 'react-pro-sidebar';
 import { Button } from 'react-bootstrap';
 import React, { useState } from 'react';
 import {useEffect} from 'react';
-import useBreakpoint from '../Hooks/useBreakpoint';
-import AllEventsPage from '../pages/AllEventsPage';
+import useBreakpoint from '../../Hooks/useBreakpoint';
+import EventsManager from './EventsManager';
 import {  GiMicrophone} from 'react-icons/gi';
 import { CiBeerMugFull } from 'react-icons/ci';
+import {IoMdBeer} from 'react-icons/io'
 
 function AdminPanelMenu(props){
 
@@ -49,8 +50,8 @@ function AdminPanelMenu(props){
         <Sidebar  width={200} defaultCollapsed={defaultCollapsed}>
           <Menu >
             <MenuItem> Documentation</MenuItem>
-            <MenuItem icon={<CiBeerMugFull/>}> Calendar</MenuItem>
-            <MenuItem icon={<GiMicrophone/>} onClick={() => props.setContent(<AllEventsPage/>)}> Events</MenuItem>
+            <MenuItem icon={<IoMdBeer/>}> Calendar</MenuItem>
+            <MenuItem icon={<GiMicrophone/>} onClick={() => props.setContent(<EventsManager/>)}> Events</MenuItem>
           </Menu>
         </Sidebar>
         <main>
