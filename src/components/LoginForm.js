@@ -28,7 +28,6 @@ function LoginForm(props) {
         UserAPI.loginUsers(loginData)
         .then(response =>{
             console.log(response);
-            console.log(response.data);
         })
     }
     return (

@@ -95,7 +95,7 @@ function AdminPanelEventCreationForm(props){
         function formatDate(dateTime)
         {
             //formats date from DateTimePicker to required format for backend "2023-03-03T03:03:03"
-            return(dateTime.getFullYear() + "-" + ('0' + dateTime.getMonth()).slice(-2) + "-" + ('0' + dateTime.getDate()).slice(-2) + "T" + ('0' + dateTime.getHours()).slice(-2) + ":" + ('0' + dateTime.getMinutes()).slice(-2) + ":" + ('0' + dateTime.getSeconds()).slice(-2));
+            return(dateTime.getFullYear() + "-" + ('0' + (dateTime.getMonth()+1)).slice(-2) + "-" + ('0' + dateTime.getDate()).slice(-2) + "T" + ('0' + dateTime.getHours()).slice(-2) + ":" + ('0' + dateTime.getMinutes()).slice(-2) + ":" + ('0' + dateTime.getSeconds()).slice(-2));
     
         }
         return (
@@ -116,7 +116,7 @@ function AdminPanelEventCreationForm(props){
 
           <div className="form-outline mb-3">
           <label className="form-label" style={{marginLeft: "-15rem"}}>Date & Time</label><br></br>
-            <div style={{marginLeft: "-3rem"}}><DateTimePicker  required={true} disableClock={true} format="y-MM-dd h:mm:ss a" onChange={setDateTimeValue} value={dateTimeValue} /></div>
+            <div style={{marginLeft: "-3rem"}}><DateTimePicker  required={true} disableClock={true} format="y/MM/dd h:mm a" onChange={setDateTimeValue} value={dateTimeValue} /></div>
             
           </div>
   

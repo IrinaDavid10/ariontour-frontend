@@ -87,32 +87,32 @@ function RegistrationForm() {
         <label className="form-label mb-3" ><div style={{fontWeight: "bold", fontSize:30}}>Register</div></label>
         
         <div className="form-outline mb-3 mt-4">
-          <label className="form-label"  style={{marginLeft: "-19rem"}} >Username</label>
+          <label className="form-label"  style={{marginLeft: "-27rem"}} >Username</label>
           <input type="text" className="form-control" onChange={ handleUsernameChange} />
         </div>
 
         <div className="form-outline mb-3">
-          <label className="form-label" style={{marginLeft: "-19rem"}}>First name</label>
+          <label className="form-label" style={{marginLeft: "-27rem"}}>First name</label>
           <input type="text"  className="form-control" onChange={ handleFirstNameChange} />
         </div>
 
         <div className="form-outline mb-3">
-          <label className="form-label"  style={{marginLeft: "-19rem"}} >Last name</label>
+          <label className="form-label"  style={{marginLeft: "-27rem"}} >Last name</label>
           <input type="text" className="form-control" onChange={ handleLastNameChange} />
         </div>
 
         <div className="form-outline mb-3">
-          <label className="form-label"  style={{marginLeft: "-19rem"}} >Password</label>
+          <label className="form-label"  style={{marginLeft: "-27rem"}} >Password</label>
           <input type="password"  className="form-control" onChange={handlePasswordChange} />
         </div>
 
         <div className="form-outline mb-3">
-          <label className="form-label"  style={{marginLeft: "-15rem"}} >Re-type password</label>
+          <label className="form-label"  style={{marginLeft: "-23rem"}} >Re-type password</label>
           <input type="password" className="form-control" onChange={handleReTypeChange} />
         </div>
 
         <div className="form-outline mb-3">
-          <label className="form-label"  style={{marginLeft: "-19rem"}} >Country</label>
+          <label className="form-label"  style={{marginLeft: "-28rem"}} >Country</label>
           <br></br>
           <select style={{marginRight: "14.5rem"}} id="country" name="country" onChange={handleCountryChange}>
           <option>Choose country</option>

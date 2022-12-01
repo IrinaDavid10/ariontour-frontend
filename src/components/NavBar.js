@@ -3,16 +3,16 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-
+import jwt_decode from "jwt-decode";
 function NavBar(){
 
     const links = [
-      
         {
             id: 1,
             path: "/",
-            text: "AriOnTour"
+            text: "Home"
         },
+      
         /*
         {
             id: 2,
@@ -37,23 +37,27 @@ function NavBar(){
         {
             id: 5,
             path: "/about",
-            text: "About"
+            text: "About",
+            roles:["CUSTOMER","ADMIN"]
          
         },
         {
             id: 6,
             path: "/events",
-            text: "Events"
+            text: "Events",
+            roles:["CUSTOMER","ADMIN"]
         },
         {
             id: 7,
             path: "/contact",
-            text: "Contact"
+            text: "Contact",
+            roles:["CUSTOMER","ADMIN"]
         },
         {
             id: 8,
             path: "/adminpanel",
-            text: "Admin panel"
+            text: "Admin panel",
+            roles:["ADMIN"]
         },
         /*
         {
@@ -79,6 +83,7 @@ function NavBar(){
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav>
                             {links.slice(1).map(link => {
+                                if(jwt_decode(localStorage.getItem("Token")).roles.some(Role => link.roles.includes(Role)))
                                 return (
                                 <Nav.Link className="me-5"  key={link.id} href={link.path}>
                                 {link.text}
