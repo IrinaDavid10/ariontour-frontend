@@ -1,12 +1,12 @@
 import React from "react";
 import UserAPI from "../APIs/UserAPI.js"
 import { useState } from "react";
-
+import {useNavigate} from 'react-router-dom';
 
 function LoginForm(props) {
 
     const [loginData, setLoginData] = useState();
-
+    const navigate = useNavigate();
     const handleUsernameChange = event => {
         setLoginData(loginData => ({
             ...loginData,
@@ -27,7 +27,16 @@ function LoginForm(props) {
         e.preventDefault();
         UserAPI.loginUsers(loginData)
         .then(response =>{
-            console.log(response);
+            console.log(response.status);
+            if(response?.status===200)
+            {
+              console.log(response.status);
+            navigate('/', {replace: true});
+            }else
+            {
+              console.log("de 2 ori pe saptamana daca am noroc");
+              navigate('/about', {replace: false});
+            }
         })
     }
     return (
