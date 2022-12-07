@@ -27,15 +27,13 @@ function LoginForm(props) {
         e.preventDefault();
         UserAPI.loginUsers(loginData)
         .then(response =>{
-            console.log(response.status);
-            if(response?.status===200)
+            if(response?.status===200 && window.authorized === true)
             {
-              console.log(response.status);
             navigate('/', {replace: true});
             }else
             {
-              console.log("de 2 ori pe saptamana daca am noroc");
-              navigate('/about', {replace: false});
+             
+              navigate('/about', {replace:true})
             }
         })
     }

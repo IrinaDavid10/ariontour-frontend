@@ -8,7 +8,7 @@ import LoginPage from './pages/LoginPage';
 import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AllEventsPage from './pages/AllEventsPage';
-import AdminPanelPage from './pages/AdminPanelPage'
+import PanelPage from './pages/PanelPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
@@ -28,7 +28,7 @@ function App() {
           <Route path="/about" element={<AboutPage/>}/>
           <Route path="/events" element={<AllEventsPage/>}/>
           <Route path="/forgotpassword" element={<ForgotPasswordPage/>}/>
-          <Route path="/adminpanel" element={<AdminPanelPage/>}/>
+          <Route path="/panel" element={<PanelPage/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
         </Routes>
       </Router>

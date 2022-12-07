@@ -4,6 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import jwt_decode from "jwt-decode";
+import Dropdown from 'react-bootstrap/Dropdown';
+import PanelPage from "../pages/PanelPage";
+
 function NavBar(){
 
     const links = [
@@ -53,12 +56,6 @@ function NavBar(){
             text: "Contact",
             roles:["CUSTOMER","ADMIN"]
         },
-        {
-            id: 8,
-            path: "/adminpanel",
-            text: "Admin panel",
-            roles:["ADMIN"]
-        },
         /*
         {
             id: 8,
@@ -67,7 +64,23 @@ function NavBar(){
         }
         */
     ]
-
+    function LoginButton(){
+        if(window.authorized === true){
+            return( 
+            <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic"> Your profile
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/panel">Panel</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Log out</Dropdown.Item>
+            </Dropdown.Menu>
+            </Dropdown>
+            )
+        }else
+        {
+            return <Button variant="outline-dark"  href="/">Login</Button>
+        }
+    }
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -93,7 +106,7 @@ function NavBar(){
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Collapse className="justify-content-end">
-                    <Button variant="outline-dark"  href="/login">Login</Button>          
+                    <LoginButton/>  
                     </Navbar.Collapse> 
                 </Container>
             </Navbar>

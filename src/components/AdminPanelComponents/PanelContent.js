@@ -1,5 +1,5 @@
 
-function AdminPanelContent(){
+function PanelContent(){
     return (
      
         <form className="bg-secondary p-2 bg-opacity-10  " style={{borderRadius:20}}> 
@@ -30,4 +30,4 @@ function AdminPanelContent(){
        </form>
     )
 }
-export default AdminPanelContent;
+export default PanelContent;
