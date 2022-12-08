@@ -8,7 +8,6 @@ const LoginAPI = {
         console.log(response);
         localStorage.removeItem("Token");
         localStorage.setItem("Token", response.data.accessToken);
-        window.authorized = true;
         return response;
     }),
     registerUser: newUser => axios.post(`${BASE_URL}/registercustomer`, newUser)

@@ -27,9 +27,11 @@ function LoginForm(props) {
         e.preventDefault();
         UserAPI.loginUsers(loginData)
         .then(response =>{
-            if(response?.status===200 && window.authorized === true)
+          //SCHIMBA
+            if(response?.status===200)   
             {
             navigate('/', {replace: true});
+            window.location.reload(true);
             }else
             {
              
