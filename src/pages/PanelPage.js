@@ -11,7 +11,7 @@ function PanelPage(){
     const [content, setContent] = useState(<PanelContent/>);
 
     return(
-        <div className='mt-5'> 
+        <div className='mt-5 mb-5'> 
         <Container>
             <Row className="justify-content-md-center">
                 <ProSidebarProvider>

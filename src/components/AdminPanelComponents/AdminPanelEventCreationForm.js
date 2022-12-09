@@ -100,7 +100,7 @@ function AdminPanelEventCreationForm(props){
         }
         return (
      
-        <form className="bg-secondary p-2 bg-opacity-10 mt-3 " style={{borderRadius:20}}  onSubmit={handleSubmit}>
+        <form className="bg-black text-light p-2 bg-opacity-100 mt-3 " style={{borderRadius:20}}  onSubmit={handleSubmit}>
           
           <label className="form-label mb-3" ><div style={{fontWeight: "bold", fontSize:30}}>Create event</div></label>
           
@@ -116,7 +116,7 @@ function AdminPanelEventCreationForm(props){
 
           <div className="form-outline mb-3">
           <label className="form-label" style={{marginLeft: "-15rem"}}>Date & Time</label><br></br>
-            <div style={{marginLeft: "-3rem"}}><DateTimePicker  required={true} disableClock={true} format="y/MM/dd h:mm a" onChange={setDateTimeValue} value={dateTimeValue} /></div>
+            <div style={{marginLeft: "-3rem"}}><DateTimePicker className="text-dark bg-light"   required={true} disableClock={true} format="y/MM/dd h:mm a" onChange={setDateTimeValue} value={dateTimeValue} /></div>
             
           </div>
   
@@ -145,7 +145,7 @@ function AdminPanelEventCreationForm(props){
           </div>
 
                       
-          <button className="btn btn-secondary input-submit btn-block mb-4" style={{ marginLeft: '15rem', marginTop:"1rem" }}>Submit</button>
+          <button className="btn bg-dark border border-white text-light input-submit btn-block mb-4" style={{ marginLeft: '15rem', marginTop:"1rem" }}>SUBMIT</button>
          
        </form>
      

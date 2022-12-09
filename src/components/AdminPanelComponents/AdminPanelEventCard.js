@@ -18,9 +18,9 @@ return(
                    
                 </Card.Text>
                 <ButtonGroup aria-label="Basic example">
-                    <Button variant="secondary">TICKETS</Button>
-                    <Button variant="secondary">EDIT</Button>
-                    <Button variant="secondary">DELETE</Button>
+                    <Button variant="dark">TICKETS</Button>
+                    <Button variant="dark">EDIT</Button>
+                    <Button variant="dark">DELETE</Button>
                 </ButtonGroup>
         </Card.Body>
     </Card>

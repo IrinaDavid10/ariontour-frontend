@@ -40,11 +40,11 @@ function EventsManager(){
     return(
         <Container>
             <Row>
-                <Col xs ={5} sm={5} md={5} lg={3} xl= {2} xxl={2} style={{ marginRight: '16rem' }}><Button onClick={() =>CreatePanel()} variant="secondary">{buttonText}</Button></Col>
+                <Col xs ={5} sm={5} md={5} lg={3} xl= {2} xxl={2} style={{ marginRight: '16rem' }}><Button onClick={() =>CreatePanel()} className=" bg-black border border-white">{buttonText}</Button></Col>
                 <Col xs={9} sm={9} md={7} lg={8} xl={10} xxl={10}><>{createEventPanel}</></Col>
             </Row>
 
-                <AdminPanelEventList eventsList={eventsList}/>
+                <AdminPanelEventList  eventsList={eventsList}/>
         </Container>
     )
 }

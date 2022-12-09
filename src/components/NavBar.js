@@ -69,21 +69,21 @@ function NavBar() {
         if (CheckExpiry.IsExpired() === false) {
             return (
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic"> Your profile
+                    <Dropdown.Toggle variant="dark" id="dropdown-basic"> Your profile
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item href="/panel">Panel</Dropdown.Item>
-                        <Logout />
+                        <Logout/>
                     </Dropdown.Menu>
                 </Dropdown>
             )
         } else {
-            return <Button variant="outline-dark" href="/login">Login</Button>
+            return <Button variant="dark" href="/login">Login</Button>
         }
     }
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar variant="dark" bg="black" expand="lg">
                 <Container>
                     <Navbar.Brand href={links[0].path}><img
                         src="/images/AriLogo.png"
@@ -99,7 +99,7 @@ function NavBar() {
                                 if (localStorage.getItem("Token") === null) {
                                     if (link.roles.includes("GUEST"))
                                         return (
-                                            <Nav.Link className="me-5" key={link.id} href={link.path}>
+                                            <Nav.Link  className="me-5 text-light"  key={link.id} href={link.path}>
                                                 {link.text}
                                             </Nav.Link>
                                         )
@@ -107,7 +107,7 @@ function NavBar() {
                                 else
                                     if (jwt_decode(localStorage.getItem("Token")).roles.some(Role => link.roles.includes(Role)))
                                         return (
-                                            <Nav.Link className="me-5" key={link.id} href={link.path}>
+                                            <Nav.Link className="me-5 text-light" key={link.id} href={link.path}>
                                                 {link.text}
                                             </Nav.Link>
                                         )

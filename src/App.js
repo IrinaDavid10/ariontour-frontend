@@ -12,13 +12,15 @@ import PanelPage from './pages/PanelPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
+import MainFooter from './components/MainFooter';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-dark">
       <Router>
         <NavBar />
+       
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/customer" element={<CustomerByFirstNamePage/>}/>
@@ -31,6 +33,7 @@ function App() {
           <Route path="/panel" element={<PanelPage/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
         </Routes>
+        <MainFooter/>
       </Router>
     </div>
   );

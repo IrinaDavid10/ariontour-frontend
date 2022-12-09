@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 function EventList(props){
     
     return(
-        <Container>
+        <Container className="mt-4 mb-5">
         <Row sm={1} xs={'auto'} md={'auto'} lg={'auto'}>
         {props.eventsList.map(event => (
             <Col key={ event.id } className="pt-3">

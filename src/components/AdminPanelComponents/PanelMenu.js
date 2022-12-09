@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import useBreakpoint from '../../Hooks/useBreakpoint';
 import EventsManager from './EventsManager';
 import { GiMicrophone } from 'react-icons/gi';
-import { CiBeerMugFull } from 'react-icons/ci';
+import { CiBeerMugFull, CiDark } from 'react-icons/ci';
 import { IoMdBeer } from 'react-icons/io'
 import jwt_decode from "jwt-decode";
 
@@ -50,7 +50,7 @@ function PanelMenu(props) {
   function Bar() {
     if (jwt_decode(localStorage.getItem("Token")).roles.includes("ADMIN")) {
       return (
-        <Menu >
+        <Menu className="text-light" >
           <MenuItem> Documentation</MenuItem>
           <MenuItem icon={<IoMdBeer />}> Calendar</MenuItem>
           <MenuItem icon={<GiMicrophone />} onClick={() => props.setContent(<EventsManager />)}> Events</MenuItem>
@@ -70,8 +70,8 @@ function PanelMenu(props) {
 
     <div style={{ display: 'flex' }}>
       {sideBurgerMenuButton}
-      <Sidebar width={200} defaultCollapsed={defaultCollapsed}>
-        <ProSidebarProvider><Bar /></ProSidebarProvider>
+      <Sidebar  backgroundColor='black' width={200} defaultCollapsed={defaultCollapsed}>
+        <ProSidebarProvider ><Bar  /></ProSidebarProvider>
       </Sidebar>
     </div>
   )
