@@ -59,7 +59,7 @@ function PanelMenu(props) {
     } else {
       return (
 
-        <Menu >
+        <Menu className="text-light" >
           <MenuItem> Account settings</MenuItem>
           <MenuItem> Bookings</MenuItem>
         </Menu>
@@ -69,7 +69,7 @@ function PanelMenu(props) {
   return (
 
     <div style={{ display: 'flex' }}>
-      {sideBurgerMenuButton}
+      {sideBurgerMenuButton }
       <Sidebar  backgroundColor='black' width={200} defaultCollapsed={defaultCollapsed}>
         <ProSidebarProvider ><Bar  /></ProSidebarProvider>
       </Sidebar>

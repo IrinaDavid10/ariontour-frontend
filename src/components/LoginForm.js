@@ -32,7 +32,7 @@ function LoginForm(props) {
           navigate('/', { replace: true });
           window.location.reload(true);
         } else {
-
+          // ar trebui sa te intoarca pe cv error page
           navigate('/about', { replace: true })
         }
       })

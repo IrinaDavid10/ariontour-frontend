@@ -2,13 +2,14 @@ import UserAPI from "../APIs/UserAPI.js"
 import React, { useState, useEffect } from "react";
 import CountryAPI from "../APIs/CountryAPI.js";
 import CountryPicker from "./CountryPicker";
+import { useNavigate } from "react-router-dom";
 
 function RegistrationForm() {
 
   const [countriesList, setCountriesList] = useState([]);
   const [matchPasswordCheck, setMatchPasswordCheck] = useState("");
   const [registrationData, setregistrationData] = useState();
-
+  const navigate = useNavigate();
 
   const fetchCountries = async () => {
     CountryAPI.getCountries()
@@ -75,12 +76,16 @@ function RegistrationForm() {
     e.preventDefault();
     UserAPI.registerUser(registrationData)
       .then(response => {
-        console.log(response);
-        console.log(response.data);
+
+        if (response?.status === 201) {
+          console.log();
+          navigate('/login', { replace: true });
+          window.location.reload(true);
+        } else {
+
+          navigate('/about', { replace: true })
+        }
       })
-      .catch((error) => {
-        console.log(error)
-      });
   }
   return (
 

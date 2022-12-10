@@ -13,6 +13,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import MainFooter from './components/MainFooter';
+import TicketPage from './pages/TicketPage';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/forgotpassword" element={<ForgotPasswordPage/>}/>
           <Route path="/panel" element={<PanelPage/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
+          <Route path="/tickets" element={<TicketPage/>}/>
         </Routes>
         <MainFooter/>
       </Router>
