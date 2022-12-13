@@ -28,7 +28,7 @@ function TicketType() {
         
         <CardGroup>
 
-            <Card>
+            <Card style={{"margin-right":20 , borderRadius: 0}}>
                 <Card.Img variant="top" src="/images/bronze.png" />
                 <Card.Body>
                     <Card.Title>Bronze ticket{bronzeTickets}</Card.Title>
@@ -37,7 +37,7 @@ function TicketType() {
                     </Card.Text>
                 </Card.Body>
             </Card>
-            <Card>
+            <Card style={{"margin-right":20 , borderRadius: 0}}>
                 <Card.Img variant="top" src="/images/silver.png" />
                 <Card.Body>
                     <Card.Title>Silver ticket</Card.Title>
@@ -46,7 +46,7 @@ function TicketType() {
                     </Card.Text>
                 </Card.Body>
             </Card>
-            <Card>
+            <Card style={{"margin-right":20 , borderRadius: 0}}>
                 <Card.Img variant="top" src="/images/g.png" />
                 <Card.Body>
                     <Card.Title>Gold ticket</Card.Title>

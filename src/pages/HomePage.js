@@ -8,9 +8,11 @@ import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 import Alert from 'react-bootstrap/Alert';
 
+
 function HomePage() {
 
-
+    
+    
     return (
         //<Button onClick={() => console.log(CheckExpiry.IsExpired())} >sdfsdfsdf</Button>
         <Container fluid className="p-0" style={{ overflow: "hidden" }}>
@@ -19,8 +21,10 @@ function HomePage() {
                     <Card className="bg-dark text-white" style={{ borderRadius: 0 }}>
                         <Card.Img src="/images/Ari2.jpg" alt="Card image" />
                         <Card.ImgOverlay className=" bottom-100 text-center">
-                            <Button variant="secondary mt-3" >Find out more</Button>
-                            <Card.Text className=" mt-5 fs-2 text"  >
+                            <Button variant="secondary mt-3" style={{ position: "absolute", top: "50%", transform: "translate(-50%, -50%)" }}>Find out more</Button>
+
+                            <Card.Text  className="  mt-5 fs-2 text"
+                            >
                                 Take part in a wonderful show
                                 <br></br>
                                 by Ariana Grande
@@ -84,3 +88,4 @@ function HomePage() {
     )
 }
 export default HomePage;
+
