@@ -54,8 +54,8 @@ function NavBar() {
         {
             id: 7,
             path: "/contact",
-            text: "Contact",
-            roles: ["GUEST", "CUSTOMER", "ADMIN"]
+            text: "Live support",
+            roles: [ "CUSTOMER", "ADMIN"]
         },
         /*
         {

@@ -9,6 +9,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Alert from 'react-bootstrap/Alert';
 
 
+
 function HomePage() {
 
     
@@ -23,8 +24,7 @@ function HomePage() {
                         <Card.ImgOverlay className=" bottom-100 text-center">
                             <Button variant="secondary mt-3" style={{ position: "absolute", top: "50%", transform: "translate(-50%, -50%)" }}>Find out more</Button>
 
-                            <Card.Text  className="  mt-5 fs-2 text"
-                            >
+                            <Card.Text  className="  mt-5 fs-2 text">
                                 Take part in a wonderful show
                                 <br></br>
                                 by Ariana Grande
@@ -49,7 +49,7 @@ function HomePage() {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
+                            <h3>First slide</h3>
                             <p>Ari</p>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -61,7 +61,7 @@ function HomePage() {
                         />
 
                         <Carousel.Caption>
-                            <h3>Second slide label</h3>
+                            <h3>Second slide</h3>
                             <p>Ari</p>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -73,7 +73,7 @@ function HomePage() {
                         />
 
                         <Carousel.Caption>
-                            <h3>Third slide label</h3>
+                            <h3>Third slide</h3>
                             <p>Ari</p>
                         </Carousel.Caption>
                     </Carousel.Item>

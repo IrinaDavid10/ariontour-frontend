@@ -10,10 +10,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AllEventsPage from './pages/AllEventsPage';
 import PanelPage from './pages/PanelPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
-import ContactPage from './pages/ContactPage';
+import ContactPage from './pages/LiveSupport';
 import AboutPage from './pages/AboutPage';
 import MainFooter from './components/MainFooter';
 import TicketPage from './pages/TicketPage';
+import LiveSupport from './pages/LiveSupport';
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
           <Route path="/events" element={<AllEventsPage/>}/>
           <Route path="/forgotpassword" element={<ForgotPasswordPage/>}/>
           <Route path="/panel" element={<PanelPage/>}/>
-          <Route path="/contact" element={<ContactPage/>}/>
+          <Route path="/contact" element={<LiveSupport/>}/>
           <Route path="/tickets" element={<TicketPage/>}/>
         </Routes>
         <MainFooter/>

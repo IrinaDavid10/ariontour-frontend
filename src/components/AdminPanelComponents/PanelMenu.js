@@ -9,6 +9,9 @@ import { GiMicrophone } from 'react-icons/gi';
 import { CiBeerMugFull, CiDark } from 'react-icons/ci';
 import { IoMdBeer } from 'react-icons/io'
 import jwt_decode from "jwt-decode";
+import {ImStatsDots} from 'react-icons/im';
+import {FiSettings} from 'react-icons/fi';
+import {SlNotebook} from 'react-icons/sl';
 
 function PanelMenu(props) {
 
@@ -51,17 +54,17 @@ function PanelMenu(props) {
     if (jwt_decode(localStorage.getItem("Token")).roles.includes("ADMIN")) {
       return (
         <Menu className="text-light" >
-          <MenuItem> Documentation</MenuItem>
-          <MenuItem icon={<IoMdBeer />}> Calendar</MenuItem>
+          <MenuItem icon={<FiSettings />}> Account settings</MenuItem>
           <MenuItem icon={<GiMicrophone />} onClick={() => props.setContent(<EventsManager />)}> Events</MenuItem>
+          <MenuItem icon={<ImStatsDots />} > Statistics</MenuItem>
         </Menu>
       )
     } else {
       return (
 
         <Menu className="text-light" >
-          <MenuItem> Account settings</MenuItem>
-          <MenuItem> Bookings</MenuItem>
+          <MenuItem icon={<FiSettings />}> Account settings</MenuItem>
+          <MenuItem icon={<SlNotebook />}> Bookings</MenuItem>
         </Menu>
       )
     }
