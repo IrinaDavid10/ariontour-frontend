@@ -1,6 +1,5 @@
 import ChatMessagesPlaceholder from "./ChatMessagePlaceholder";
 import SendMessagePlaceholder from "./SendMessagePlaceholder";
-import UsernamePlaceholder from "./UserNamePlaceholder";
 import React, { useState, useEffect } from 'react';
 import SockJS from 'sockjs-client';
 import Stomp from 'stompjs';

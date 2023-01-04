@@ -12,6 +12,7 @@ import jwt_decode from "jwt-decode";
 import {ImStatsDots} from 'react-icons/im';
 import {FiSettings} from 'react-icons/fi';
 import {SlNotebook} from 'react-icons/sl';
+import AdminAccountSettings from './AdminAccountSettings';
 
 function PanelMenu(props) {
 
@@ -54,7 +55,7 @@ function PanelMenu(props) {
     if (jwt_decode(localStorage.getItem("Token")).roles.includes("ADMIN")) {
       return (
         <Menu className="text-light" >
-          <MenuItem icon={<FiSettings />}> Account settings</MenuItem>
+          <MenuItem icon={<FiSettings />} onClick={() => props.setContent(<AdminAccountSettings />)}>Account settings </MenuItem>
           <MenuItem icon={<GiMicrophone />} onClick={() => props.setContent(<EventsManager />)}> Events</MenuItem>
           <MenuItem icon={<ImStatsDots />} > Statistics</MenuItem>
         </Menu>
