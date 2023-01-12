@@ -55,7 +55,7 @@ function NavBar() {
             id: 7,
             path: "/contact",
             text: "Live support",
-            roles: [ "CUSTOMER", "ADMIN"]
+            roles: ["CUSTOMER", "ADMIN"]
         },
         /*
         {
@@ -73,7 +73,7 @@ function NavBar() {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item href="/panel">Panel</Dropdown.Item>
-                        <Logout/>
+                        <Logout />
                     </Dropdown.Menu>
                 </Dropdown>
             )
@@ -81,6 +81,16 @@ function NavBar() {
             return <Button variant="dark" href="/login">Login</Button>
         }
     }
+
+    function isTokenExpired() {
+        const token = localStorage.getItem("Token");
+        if (!token) return true;
+
+        const decoded = jwt_decode(token);
+        const currentTime = Date.now() / 1000;
+        return decoded.exp < currentTime;
+    }
+
     return (
         <div>
             <Navbar variant="dark" bg="black" expand="lg">
@@ -96,10 +106,10 @@ function NavBar() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav>
                             {links.slice(1).map(link => {
-                                if (localStorage.getItem("Token") === null) {
+                                if (localStorage.getItem("Token") === null || isTokenExpired()) {
                                     if (link.roles.includes("GUEST"))
                                         return (
-                                            <Nav.Link  className="me-5 text-light"  key={link.id} href={link.path}>
+                                            <Nav.Link className="me-5 text-light" key={link.id} href={link.path}>
                                                 {link.text}
                                             </Nav.Link>
                                         )

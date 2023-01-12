@@ -5,7 +5,7 @@ function CustomerSearchByFirstName(props){
     const customer = props;
  
     return (
-            <p>{customer.firstName}</p>
+            <p className="text-light">{customer.firstName}</p>
    )
 }
 export default CustomerSearchByFirstName;

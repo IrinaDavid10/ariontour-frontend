@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 function ModifyPassword() {
     const [passwordChangeData, setPasswordChangeData] = useState();
     const [matchPasswordCheck, setMatchPasswordCheck] = useState("");
+    
     const handleOldPasswordChange = event => {
         setPasswordChangeData(passwordChangeData => ({
             ...passwordChangeData,
@@ -21,7 +22,7 @@ function ModifyPassword() {
         }));
     }
 
-    function setUsername(){
+    function setUsername() {
         setPasswordChangeData(passwordChangeData => ({
             ...passwordChangeData,
             username: jwtDecode(localStorage.getItem("Token")).sub || ''
@@ -29,8 +30,8 @@ function ModifyPassword() {
     }
 
     useEffect(() => {
-       setUsername();
-      },[]);
+        setUsername();
+    }, []);
 
     const handleReEnterPasswordChange = event => {
 
@@ -47,7 +48,7 @@ function ModifyPassword() {
         e.preventDefault();
         UserAPI.changePassword(passwordChangeData)
             .then(response => {
-          
+
                 if (response?.status === 200) {
                     alert('Password successfully changed!');
                     return;
@@ -57,17 +58,21 @@ function ModifyPassword() {
     }
 
     return (
-       
-            <div className="form-outline mb-5 mt-5">
-                <label className="form-label" >Enter old password:</label>
-                <input type="text" id="form2Example1" className="form-control" onChange={handleOldPasswordChange} />
-                <label className="form-label" >Enter new password:</label>
-                <input type="text" id="form2Example1" className="form-control" onChange={handleNewPasswordChange} />
-                <label className="form-label" >Re-enter new password:</label>
-                <input type="text" id="form2Example1" className="form-control" onChange={handleReEnterPasswordChange} />
-                <Button onClick={handleSubmit} style={{ marginRight: '16rem' }} variant="dark mt-3" >Submit</Button>
-            </div>
-     
+
+        <form className="bg-black text-light p-2 bg-opacity-100 mb-5 " style={{ borderRadius: 20 }} onSubmit={handleSubmit}>
+            <h1>Modify account password</h1>
+            <label className="form-label mb-3 mt-3"  >Enter old password:</label>
+            <input type="text" id="form2Example1" style={{ width: '50%' }} className="form-control mx-auto d-block" onChange={handleOldPasswordChange} />
+           
+            <label className="form-label mb-3 mt-3" >Enter new password:</label>
+            <input type="text" id="form2Example1" style={{ width: '50%' }} className="form-control mx-auto d-block" onChange={handleNewPasswordChange} />
+           
+            <label className="form-label mb-3 mt-3" >Re-enter new password:</label>
+            <input type="text" id="form2Example1" style={{ width: '50%' }} className="form-control mx-auto d-block" onChange={handleReEnterPasswordChange} />
+           
+            <button className="btn bg-dark border border-white text-light input-submit btn-block mt-4" style={{ marginLeft: '28rem', marginTop: "1rem" }} variant="dark mt-3" >Submit</button>
+        </form>
+
 
 
     )

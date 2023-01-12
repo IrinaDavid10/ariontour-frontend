@@ -12,7 +12,7 @@ function Customer(props) {
   });
     }
     return (
-        <tr>
+        <tr >
             <td>{ props.customer.id }</td>
             <td>{ props.customer.firstName }</td>
             <td>{ props.customer.lastName }</td>

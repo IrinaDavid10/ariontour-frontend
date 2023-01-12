@@ -23,10 +23,11 @@ function CustomerShowAllPage(){
     
     return (
       
-        <div className='mt-5'> 
+        <div className='mt-5 '> 
+          
             <Container>
-                <Row className="justify-content-md-center">
-                    <Col md="auto">  <CustomerList customersList={customersList}/></Col>
+                <Row className="justify-content-md-center ">
+                    <Col md="auto">  <CustomerList customersList = {customersList} /></Col>
                 </Row>
             </Container>
         </div>

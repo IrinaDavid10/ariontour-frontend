@@ -11,8 +11,11 @@ import { IoMdBeer } from 'react-icons/io'
 import jwt_decode from "jwt-decode";
 import {ImStatsDots} from 'react-icons/im';
 import {FiSettings} from 'react-icons/fi';
+
+import { IoIosPeople } from "react-icons/io"
 import {SlNotebook} from 'react-icons/sl';
 import AdminAccountSettings from './AdminAccountSettings';
+import AdminPanelCustomerOverview from './AdminPanelCustomerOverview';
 
 function PanelMenu(props) {
 
@@ -57,8 +60,10 @@ function PanelMenu(props) {
         <Menu className="text-light" >
           <MenuItem icon={<FiSettings />} onClick={() => props.setContent(<AdminAccountSettings />)}>Account settings </MenuItem>
           <MenuItem icon={<GiMicrophone />} onClick={() => props.setContent(<EventsManager />)}> Events</MenuItem>
-          <MenuItem icon={<ImStatsDots />} > Statistics</MenuItem>
+          <MenuItem icon={<ImStatsDots  />} > Statistics</MenuItem>
+          <MenuItem icon={<IoIosPeople size={25}/>} onClick={() => props.setContent(<AdminPanelCustomerOverview />)}> Customers</MenuItem>
         </Menu>
+        //AdminPanelCustomerOverview
       )
     } else {
       return (
