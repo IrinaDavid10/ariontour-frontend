@@ -18,8 +18,8 @@ function CustomerList(props) {
     return (
 
         <div>
-            <input type="text" placeholder="Search..." onChange={e => setSearch(e.target.value)} />
-            <Table className="text-light" responsive="xxl" bordered hover size="xxl">
+            <input className="mb-3" type="text" placeholder="Enter first name..." onChange={e => setSearch(e.target.value)} />
+            <Table className="text-light" responsive="xxl" bordered  size="xxl">
 
                 <thead >
                     <tr>
@@ -27,13 +27,14 @@ function CustomerList(props) {
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Delete</th>
+                       
                     </tr>
                 </thead>
 
 
                 <tbody className="text-light" >
                     {filteredCustomers.map(customer => (
-                        <Customer key={customer.id} customer={customer} />
+                        <Customer key={customer.id} customer={customer} setRefresh={(answer) =>{props.setRefresh(answer)}} />
                     ))}
                 </tbody>
 

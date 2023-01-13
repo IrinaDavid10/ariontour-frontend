@@ -35,7 +35,7 @@ function CustomerByFirstNamePage(){
     return (
         <div>
         <h1>Filtering by name</h1>
-            <input type="text" placeholder="Search..." onChange={e => setSearch(e.target.value)} />
+            <input  type="text" placeholder="Search..." onChange={e => setSearch(e.target.value)} />
                 {filteredCustomers.map((customer) => (
                     <CustomerSearchByFirstName key={customer.id} {...customer}/>
                 ))}
