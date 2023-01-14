@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import CheckExpiry from "./CheckExpiry";
-import TicketType from "./TicketType";
+import TicketList from "./TicketList";
 import TicketPage from "../pages/TicketPage";
 
 function EventCard(props){

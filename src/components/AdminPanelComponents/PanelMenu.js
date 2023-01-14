@@ -16,6 +16,8 @@ import { IoIosPeople } from "react-icons/io"
 import {SlNotebook} from 'react-icons/sl';
 import AdminAccountSettings from './AdminAccountSettings';
 import AdminPanelCustomerOverview from './AdminPanelCustomerOverview';
+import AccountSettings from '../AccountSettings';
+import Bookings from '../Bookings';
 
 function PanelMenu(props) {
 
@@ -69,8 +71,8 @@ function PanelMenu(props) {
       return (
 
         <Menu className="text-light" >
-          <MenuItem icon={<FiSettings />}> Account settings</MenuItem>
-          <MenuItem icon={<SlNotebook />}> Bookings</MenuItem>
+          <MenuItem icon={<FiSettings />} onClick={() => props.setContent(<AccountSettings />)}> Account settings</MenuItem>
+          <MenuItem icon={<SlNotebook />} onClick={() => props.setContent(<Bookings />)}> Bookings</MenuItem>
         </Menu>
       )
     }

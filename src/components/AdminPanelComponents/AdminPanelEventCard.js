@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import AdminPanelSetEventTickets from "./AdminPanelSetEventTickets";
 
 function AdminPanelEventCard(props){
+    const [showTickets, setShowTickets] = useState(false);
+    const onHandleTickets = {
+
+    }
 return(
     <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src="/images/ar.jpg" />
@@ -18,11 +23,13 @@ return(
                    
                 </Card.Text>
                 <ButtonGroup aria-label="Basic example">
-                    <Button variant="dark">TICKETS</Button>
+                    <Button variant="dark" onClick={() =>setShowTickets(!showTickets)}>TICKETS</Button>
                     <Button variant="dark">EDIT</Button>
                     <Button variant="dark">DELETE</Button>
                 </ButtonGroup>
+                {showTickets && <AdminPanelSetEventTickets event = {props.event}/>}
         </Card.Body>
+        
     </Card>
 )
 }
