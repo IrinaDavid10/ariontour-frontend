@@ -11,7 +11,7 @@ return(
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    <input defaultValue={0} type="number" min={0} max={props.available} style={{width:`50%`}} onChange={(e)=>props.onChange(e,props.ticket.type)}/>
+                    <input defaultValue={0} type="number" min={0} max={props.available} style={{width:`50%`}} onChange={(e)=>props.onChange(e)}/>
                 </Card.Footer>
             </Card>
 )

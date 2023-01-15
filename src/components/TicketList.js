@@ -48,14 +48,6 @@ function TicketList() {
         fetchAvailableTickets();
     },[]);
     
-    const onAmountChange = (event, type) => {
-        if (type === 0)
-            setBronzeTickets(event.target.value);
-        if (type === 1)
-            setSilverTickets(event.target.value);
-        if (type === 2)
-            setGoldTickets(event.target.value);
-    }
     const handlePurchase =  () => {
         if (bronzeTickets > 0) {
            CreateBooking(bronzeTickets, 0);
@@ -92,9 +84,9 @@ function TicketList() {
         <h1 className='text-light'>Gold {availableGoldTickets}</h1>
             <CardGroup>
 
-                <TicketCard eventId={eventId} available={availableBronzeTickets} ticket={{ type: 0, name: "bronze" }} onChange={(e, type) => onAmountChange(e, type)} />
-                <TicketCard eventId={eventId} available={availableSilverTickets} ticket={{ type: 1, name: "silver" }} onChange={(e, type) => onAmountChange(e, type)} />
-                <TicketCard eventId={eventId} available={availableGoldTickets} ticket={{ type: 2, name: "gold" }} onChange={(e, type) => onAmountChange(e, type)} />
+                <TicketCard eventId={eventId} available={availableBronzeTickets} ticket={{ name: "bronze" }} onChange={(e) => setBronzeTickets(e.target.value)} />
+                <TicketCard eventId={eventId} available={availableSilverTickets} ticket={{ name: "silver" }} onChange={(e) => setSilverTickets(e.target.value)} />
+                <TicketCard eventId={eventId} available={availableGoldTickets} ticket={{ name: "gold" }} onChange={(e) => setGoldTickets(e.target.value)} />
 
             </CardGroup>
             <Button onClick={() => handlePurchase()}>Purchase</Button>

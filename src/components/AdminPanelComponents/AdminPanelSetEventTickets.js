@@ -39,101 +39,93 @@ function AdminPanelSetEventTickets(props) {
             })
             .catch(err => console.error(err))
     }
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
 
-    const handleOnChange = (event, ticketType, setTicketType) => {
-        setTicketType(event.target.value);
+        const request = {
+            eventId: props.event.id,
+            requests: [
+                {
+                    ticketType: 0,
+                    price: bronzePrice,
+                    numberOfTickets: addedBronzeTickets
+                },
+                {
+                    ticketType: 1,
+                    price: silverPrice,
+                    numberOfTickets: addedSilverTickets
+                },
+                {
+                    ticketType: 2,
+                    price: goldPrice,
+                    numberOfTickets: addedGoldTickets
+                }
+            ]
+        };
+        TicketAPI.createTickets(request).then((response) => {
+            fetchSilverTickets();
+            fetchGoldTickets();
+            fetchBronzeTickets();
+            console.log(response);
+        });
     }
-    const handleOnSubmit = (data) => {
-        data.preventDefault();
-        const bronzeValue = data.target.elements.bronze.value;
-        const silverValue = data.target.elements.silver.value;
-        const goldValue = data.target.elements.gold.value;
-        const BronzeTickets = ({
-            eventId : props.event.id,
-            ticketType: 0,
-            price: bronzePrice,
-            numberOfTickets:bronzeValue
-        });
-        const SilverTickets = ({
-            eventId : props.event.id,
-            ticketType: 1,
-            price: silverPrice,
-            numberOfTickets:silverValue
-        });
-        const GoldTickets = ({
-            eventId : props.event.id,
-            ticketType: 2,
-            price: goldPrice,
-            numberOfTickets:goldValue
-        });
-        console.log(JSON.stringify(BronzeTickets));
-        console.log(JSON.stringify(SilverTickets));
-        console.log(JSON.stringify(GoldTickets));
-        TicketAPI.createTickets(BronzeTickets).then((response) =>console.log(response));
-        TicketAPI.createTickets(SilverTickets).then((response) =>console.log(response));
-        TicketAPI.createTickets(GoldTickets).then((response) =>console.log(response));
-        
-    }
-    const handleOnPriceChange = (event, priceType, setPriceState) => {
-        setPriceState(event.target.value);
-      };
     useEffect(() => {
         fetchSilverTickets();
-    }, [silverTickets]);
+    }, []);
 
     useEffect(() => {
         fetchGoldTickets();
-    }, [goldTickets]);
+    }, []);
 
     useEffect(() => {
         fetchBronzeTickets();
-    }, [bronzeTickets]);
+    }, []);
     return (
         <Form onSubmit={handleOnSubmit}>
             <Container>
                 <Row><label>Current number of tickets</label></Row>
                 <Col>
-          <label><a style={{color: '#CD7F32'}}>Bronze: </a>{bronzeTickets}&nbsp;</label>
-          
-          <label><a style={{color: '#C0C0C0'}}>Silver: </a> {silverTickets}&nbsp;</label>
-         
-          <label><a style={{color: '#FFD700'}}>Gold: </a> {goldTickets}</label>
-          </Col>
-          </Container>
-          <Container>
-          <Row  style={{backgroundColor: '#CD7F32', paddingBottom: '10px'}}>
-                <Col>
-                <label>Number of tickets</label>
-          <FormControl name="bronze" type="number" min={0} required onChange={(event) => handleOnChange(event, "bronze", setAddedBronzeTickets)} />
-          </Col>
-          <Col>
-          <label>Price per ticket</label>
-          <FormControl name="bronzePrice"  type="number" min={0} required onChange={(event) => handleOnPriceChange(event, "bronzePrice", setBronzePrice)} />
-          </Col>
-          </Row>
-          <Row  style={{backgroundColor:'#C0C0C0' , paddingBottom: '10px'}}>
-                <Col>
-                <label>Number of tickets</label>
-          <FormControl name="silver" type="number" min={0} required onChange={(event) => handleOnChange(event, "silver", setAddedSilverTickets)} />
-          </Col>
-          <Col>
-          <label>Price per ticket</label>
-          <FormControl name="silverPrice" type="number" min={0} required onChange={(event) => handleOnPriceChange(event, "silverPrice", setSilverPrice)} />
-          </Col>
-          </Row>
-          <Row  style={{backgroundColor:'#FFD700' , paddingBottom: '10px'}}>
-                <Col>
-                <label>Number of tickets</label>
-          <FormControl name="gold" type="number" min={0} required onChange={(event) => handleOnChange(event, "gold", setAddedGoldTickets)} />
-          </Col>
-          <Col>
-          <label>Price per ticket</label>
-          <FormControl name="goldPrice" type="number" min={0} required onChange={(event) => handleOnPriceChange(event, "goldPrice", setGoldPrice)} />
-          </Col>
-          </Row>
-          </Container>
-          <Button variant="primary" type="submit" >Submit</Button>
+                    <label><a style={{ color: '#CD7F32' }}>Bronze: </a>{bronzeTickets}&nbsp;</label>
+
+                    <label><a style={{ color: '#C0C0C0' }}>Silver: </a> {silverTickets}&nbsp;</label>
+
+                    <label><a style={{ color: '#FFD700' }}>Gold: </a> {goldTickets}</label>
+                </Col>
+            </Container>
+            <Container>
+                <Row style={{ backgroundColor: '#CD7F32', paddingBottom: '10px' }}>
+                    <Col>
+                        <label>Number of tickets</label>
+                        <FormControl name="bronze" type="number" min={0} required onChange={(event) => setAddedBronzeTickets(event.target.value)} />
+                    </Col>
+                    <Col>
+                        <label>Price per ticket</label>
+                        <FormControl name="bronzePrice" type="number" min={0} required onChange={(event) => setBronzePrice(event.target.value)} />
+                    </Col>
+                </Row>
+                <Row style={{ backgroundColor: '#C0C0C0', paddingBottom: '10px' }}>
+                    <Col>
+                        <label>Number of tickets</label>
+                        <FormControl name="silver" type="number" min={0} required onChange={(event) => setAddedSilverTickets(event.target.value)} />
+                    </Col>
+                    <Col>
+                        <label>Price per ticket</label>
+                        <FormControl name="silverPrice" type="number" min={0} required onChange={(event) => setSilverPrice(event.target.value)} />
+                    </Col>
+                </Row>
+                <Row style={{ backgroundColor: '#FFD700', paddingBottom: '10px' }}>
+                    <Col>
+                        <label>Number of tickets</label>
+                        <FormControl name="gold" type="number" min={0} required onChange={(event) => setAddedGoldTickets(event.target.value)} />
+                    </Col>
+                    <Col>
+                        <label>Price per ticket</label>
+                        <FormControl name="goldPrice" type="number" min={0} required onChange={(event) => setGoldPrice(event.target.value)} />
+                    </Col>
+                </Row>
+            </Container>
+            <Button variant="primary" type="submit" >Submit</Button>
         </Form>
-      );
+    );
 }
 export default AdminPanelSetEventTickets;
