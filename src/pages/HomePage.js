@@ -12,8 +12,8 @@ import Alert from 'react-bootstrap/Alert';
 
 function HomePage() {
 
-    
-    
+
+
     return (
         //<Button onClick={() => console.log(CheckExpiry.IsExpired())} >sdfsdfsdf</Button>
         <Container fluid className="p-0" style={{ overflow: "hidden" }}>
@@ -22,22 +22,25 @@ function HomePage() {
                     <Card className="bg-dark text-white" style={{ borderRadius: 0 }}>
                         <Card.Img src="/images/Ari2.jpg" alt="Card image" />
                         <Card.ImgOverlay className=" bottom-100 text-center">
-                            <Button variant="secondary mt-3" style={{ position: "absolute", top: "50%", transform: "translate(-50%, -50%)" }}>Find out more</Button>
-
-                            <Card.Text  className="  mt-5 fs-2 text">
-                                Take part in a wonderful show
-                                <br></br>
-                                by Ariana Grande
-                            </Card.Text>
+                            <Button variant="secondary mt-5" style={{ position: "absolute", top: "50%", transform: "translate(-280%, 120%)" }}>Find out more</Button>
+                          
+                                <Card.Text className="  mt-5  text " style={{ position: "absolute", top: "100%", transform: "translate(100%, 350%)", fontFamily: "Roboto", fontWeight: 500, fontSize: "32px" }}>
+                                    Take part in a wonderful show
+                                    <br></br>
+                                    by Ariana Grande
+                                </Card.Text>
+                            
                         </Card.ImgOverlay>
                     </Card>
                 </Col>
             </Row>
 
             <Row>
-                <Alert variant="black text-light fs-1 text">
-                    Photos from events
-                </Alert>
+                <Card bg="dark" border="dark">
+                    <Card.Body>
+                        <Card.Title className="text-light fs-1 text">Photos from events</Card.Title>
+                    </Card.Body>
+                </Card>
             </Row>
 
             <Row>
