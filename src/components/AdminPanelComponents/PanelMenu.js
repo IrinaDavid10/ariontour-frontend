@@ -18,6 +18,7 @@ import AdminAccountSettings from './AdminAccountSettings';
 import AdminPanelCustomerOverview from './AdminPanelCustomerOverview';
 import AccountSettings from '../AccountSettings';
 import Bookings from '../Bookings';
+import AdminPanelStatistics from './AdminPanelStatistics';
 
 function PanelMenu(props) {
 
@@ -62,7 +63,7 @@ function PanelMenu(props) {
         <Menu className="text-light" >
           <MenuItem icon={<FiSettings />} onClick={() => props.setContent(<AdminAccountSettings />)}>Account settings </MenuItem>
           <MenuItem icon={<GiMicrophone />} onClick={() => props.setContent(<EventsManager />)}> Events</MenuItem>
-          <MenuItem icon={<ImStatsDots  />} > Statistics</MenuItem>
+          <MenuItem icon={<ImStatsDots  />} onClick={() => props.setContent(<AdminPanelStatistics />)} > Statistics</MenuItem>
           <MenuItem icon={<IoIosPeople size={25}/>} onClick={() => props.setContent(<AdminPanelCustomerOverview />)}> Customers</MenuItem>
         </Menu>
         //AdminPanelCustomerOverview

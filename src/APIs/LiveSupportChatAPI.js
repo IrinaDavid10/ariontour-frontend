@@ -6,7 +6,7 @@ const config = {
 };
 const LiveSupportChatAPI = {
     createLiveSupportChat: (newChat) => axios.post(`${BASE_URL}/chats`, newChat,config),
-    getLiveSupportChats: () => axios.get(`${BASE_URL}/chats`)
+    getLiveSupportChats: () => axios.get(`${BASE_URL}/chats`, config)
 
 }
 

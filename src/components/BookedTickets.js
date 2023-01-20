@@ -27,7 +27,7 @@ function BookedTickets(props) {
         fetchBookedTickets();
     }, [])
     const ticketColor = (ticketType) => {
-        console.log("TICKET TypEEEE" + JSON.stringify());
+      
         switch (ticketType.ticketType) {
             case "BRONZE":
                 return "#CD7F32"

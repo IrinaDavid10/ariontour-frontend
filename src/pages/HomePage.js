@@ -7,12 +7,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 import Alert from 'react-bootstrap/Alert';
+import { useNavigate } from "react-router-dom";
 
 
 
 function HomePage() {
 
-
+    const navigate = useNavigate();
 
     return (
         //<Button onClick={() => console.log(CheckExpiry.IsExpired())} >sdfsdfsdf</Button>
@@ -22,7 +23,7 @@ function HomePage() {
                     <Card className="bg-dark text-white" style={{ borderRadius: 0 }}>
                         <Card.Img src="/images/Ari2.jpg" alt="Card image" />
                         <Card.ImgOverlay className=" bottom-100 text-center">
-                            <Button variant="secondary mt-5" style={{ position: "absolute", top: "50%", transform: "translate(-280%, 120%)" }}>Find out more</Button>
+                            <Button variant="secondary mt-5" style={{ position: "absolute", top: "50%", transform: "translate(-280%, 120%)" }} onClick={() => navigate('/about', { replace: true })}>Find out more</Button>
                           
                                 <Card.Text className="  mt-5  text " style={{ position: "absolute", top: "100%", transform: "translate(100%, 350%)", fontFamily: "Roboto", fontWeight: 500, fontSize: "32px" }}>
                                     Take part in a wonderful show

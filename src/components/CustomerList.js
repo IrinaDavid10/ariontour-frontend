@@ -27,7 +27,6 @@ function CustomerList(props) {
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Delete</th>
-                        <th>Edit</th>
                        
                     </tr>
                 </thead>

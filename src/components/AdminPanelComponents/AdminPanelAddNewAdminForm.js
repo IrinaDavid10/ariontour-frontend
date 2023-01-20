@@ -28,15 +28,7 @@ function AdminPanelAddNewAdminForm() {
         }));
     }
 
-    const handleReEnterPasswordChange = event => {
 
-
-        if (event.target.value !== addNewAdminData.newPassword) {
-            setMatchPasswordCheck("Passwords do not match.");
-        } else {
-            setMatchPasswordCheck("");
-        }
-    }
 
     const handleSubmit = e => {
         
@@ -59,9 +51,9 @@ function AdminPanelAddNewAdminForm() {
             <label className="form-label mb-3 mt-3"  >Set username:</label>
             <input type="text" id="form2Example1" style={{ width: '50%' }} className="form-control mx-auto d-block" onChange={handleUsernameChange}  />
             <label className="form-label mb-3 mt-3" >Set password:</label>
-            <input type="text" id="form2Example1" style={{ width: '50%' }} className="form-control mx-auto d-block" onChange={handlePasswordChange}  />
+            <input type="password" id="form2Example1" style={{ width: '50%' }} className="form-control mx-auto d-block" onChange={handlePasswordChange}  />
             <label className="form-label mb-3 mt-3" >Confirm password:</label>
-            <input type="text" id="form2Example1" style={{ width: '50%' }} className="form-control mx-auto d-block" onChange={handleConfirmedPasswordChange}  />
+            <input type="password" id="form2Example1" style={{ width: '50%' }} className="form-control mx-auto d-block" onChange={handleConfirmedPasswordChange}  />
             <button className="btn bg-dark border border-white text-light input-submit btn-block mt-4" style={{ marginLeft: '28rem', marginTop: "1rem" }} variant="dark mt-3" >Submit</button>
         </form>
 
